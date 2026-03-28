@@ -3,368 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chicken Business Plan</title>
+    <title>6 Retards + Chickens</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f8f9fa;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 30px 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .logo {
-            width: 120px;
-            height: 120px;
-            background: white;
-            border-radius: 50%;
-            display: inline-flex;
+            background-color: #d8d8d8;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 48px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 300;
-        }
-        
-        .content {
-            background: white;
+        .container {
+            text-align: center;
+            color: #333;
+            max-width: 600px;
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
             margin-bottom: 30px;
         }
-        
-        h2 {
-            color: #667eea;
-            font-size: 1.8em;
-            margin: 30px 0 15px 0;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eee;
+        .logo img {
+            max-width: 200px;
+            height: auto;
         }
-        
-        h3 {
-            color: #555;
-            font-size: 1.4em;
-            margin: 25px 0 10px 0;
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 300;
         }
-        
-        h4 {
-            color: #666;
-            font-size: 1.2em;
-            margin: 20px 0 8px 0;
-        }
-        
-        ul, ol {
-            margin: 15px 0 15px 25px;
-        }
-        
-        li {
-            margin: 8px 0;
-        }
-        
-        strong {
-            color: #444;
-        }
-        
-        hr {
-            border: none;
-            height: 2px;
-            background: linear-gradient(to right, transparent, #667eea, transparent);
+        .nav {
             margin: 40px 0;
         }
-        
-        .highlight {
-            background: #fff3cd;
-            padding: 15px;
-            border-left: 4px solid #ffc107;
-            margin: 20px 0;
-            border-radius: 0 5px 5px 0;
+        .nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            border: 2px solid #333;
+            border-radius: 50px;
+            margin: 10px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.8);
         }
-        
-        .cost-summary {
-            background: #d4edda;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #28a745;
+        .nav a:hover {
+            background: #333;
+            color: #d8d8d8;
         }
-        
-        .income-projection {
-            background: #cce5ff;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #007bff;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 10px;
-            }
-            
-            .content {
-                padding: 20px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .logo {
-                width: 80px;
-                height: 80px;
-                font-size: 32px;
-            }
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.8;
+            margin-bottom: 30px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <div class="logo">🐔</div>
-            <h1>Chicken Business Plan</h1>
-            <p>Comprehensive Guide to Sustainable Poultry Farming</p>
-        </header>
+        <div class="logo">
+            <img src="6rlogo.png" alt="6 Retards Logo">
+        </div>
+        <h1>6 Retards + Chickens</h1>
+        <p class="subtitle">We don't know what we're doing, but we're having fun anyway</p>
         
-        <main class="content">
-            <h2>What We Need</h2>
-            
-            <h3>Chickens</h3>
-            <ul>
-                <li><strong>Total:</strong> 45 chickens (accounting for 25% failure to thrive rate)</li>
-                <li><strong>Target:</strong> 3 chickens per person for 10-12 people</li>
-            </ul>
-            
-            <h3>Breeds & Costs</h3>
-            <ul>
-                <li><strong>Blue Austrolorp:</strong> 15 × $7/female = $105</li>
-                <li><strong>Delawares:</strong> 15 × $10/female = $150</li>
-                <li><strong>Black Copper Marans:</strong> 15 × $10/female = $150</li>
-                <li><strong>Total Chickens:</strong> $405</li>
-            </ul>
-            
-            <h3>Infrastructure</h3>
-            <ul>
-                <li><strong>Brooding Boxes:</strong> 2 boxes, 6' × 7.5' each (45 sq ft per box)</li>
-                <li><strong>Electric Mesh Fencing:</strong> 164' kit for $199 at Tractor Supply</li>
-                <li><strong>Total Space:</strong> 1000 square feet needed</li>
-                <li><strong>Mobile Chicken Coop:</strong> 6' × 10' (holds 15-50 chickens)</li>
-                <li><strong>Trailer:</strong> 6' × 10'-12 for $1600</li>
-            </ul>
-            
-            <h3>Feed & Nutrition</h3>
-            <ul>
-                <li><strong>8 weeks feed:</strong> 10 × 50lb bags = 500lbs at $0.50/lb = $250</li>
-                <li><strong>Up to 18 weeks feed:</strong> 30 × 50lb bags = 1500lbs at $0.50/lb = $750</li>
-                <li><strong>Poultry grit:</strong> $8</li>
-                <li><strong>Oyster shell (18-20 weeks):</strong> 5 lbs for $8 (lasts ~3 months)</li>
-                <li><strong>Feed Storage Totes:</strong> $50</li>
-            </ul>
-            
-            <h3>Housing & Supplies</h3>
-            <ul>
-                <li><strong>Shavings:</strong> 5 × 8 cubic feet bags at $8.10 each = $40.50</li>
-                <li><strong>Nesting boxes:</strong> 12 boxes (free DIY or $180 purchased at $15 each)</li>
-                <li><strong>Brooding:</strong> 2 × 105L totes at $15 each = $30</li>
-                <li><strong>Housing:</strong> IBC totes cut in half (free) until they go outside</li>
-            </ul>
-            
-            <h3>Heating & Equipment</h3>
-            <ul>
-                <li><strong>Heat lamps:</strong> 2 at $15 each = $30</li>
-                <li><strong>Brooder thermometers:</strong> 2 at $7 each = $14</li>
-                <li><strong>Spare bulbs:</strong> $30</li>
-                <li><strong>Chicken waterer & feeders:</strong> $60</li>
-                <li><strong>120V ventilation fan:</strong> $80</li>
-            </ul>
-            
-            <h3>Health & Safety</h3>
-            <ul>
-                <li><strong>Hardware cloth:</strong> 100' × 2' roll for $80</li>
-                <li><strong>Cleaning supplies:</strong> $30</li>
-                <li><strong>Tools:</strong> Shovel, scoop, rake, gloves</li>
-                <li><strong>Dust bath materials:</strong> Sawmill (free)</li>
-                <li><strong>First aid kit:</strong> Covered</li>
-                <li><strong>Waste disposal:</strong> Chicken manure as fertilizer for garden</li>
-            </ul>
-            
-            <h3>Construction & Features</h3>
-            <ul>
-                <li><strong>Building materials for coop:</strong> $0 (already have)</li>
-                <li><strong>Roosting bars:</strong> TBD (may construct ourselves, $35-70 each if purchased, need 8-10 bars for 45 chickens)</li>
-                <li><strong>Ramp for mobile coop:</strong> Covered</li>
-                <li><strong>Wheelbarrow:</strong> Covered</li>
-            </ul>
-            
-            <h3>Seasonal Protection</h3>
-            <ul>
-                <li><strong>Winter protection:</strong> Insulation, windbreaks (TBD)</li>
-                <li><strong>Summer cooling:</strong> TBD</li>
-                <li><strong>Power:</strong> Backup power not needed (power not an issue)</li>
-            </ul>
-            
-            <div class="cost-summary">
-                <h2>Cost Summary</h2>
-                <ul>
-                    <li><strong>Chickens:</strong> $405</li>
-                    <li><strong>Infrastructure:</strong> $1,799 (fencing $199 + trailer $1600)</li>
-                    <li><strong>Feed:</strong> $1,008 (first 18 weeks)</li>
-                    <li><strong>Supplies:</strong> $70.50 (shavings + grit + oyster shell)</li>
-                    <li><strong>Equipment:</strong> $214 (heating + thermometers + bulbs + waterers/feeders)</li>
-                    <li><strong>Health/Safety:</strong> $110 (hardware cloth + cleaning supplies)</li>
-                    <li><strong>Storage:</strong> $50 (feed totes)</li>
-                    <li><strong>Ventilation:</strong> $80</li>
-                </ul>
-                <p><strong>Total Initial Investment:</strong> ~$3,736.50</p>
-                <p><em>(Note: Some costs are TBD or covered by existing materials)</em></p>
-            </div>
-            
-            <hr>
-            
-            <h2>Ongoing Costs (After 18 Weeks)</h2>
-            
-            <h3>Monthly Costs</h3>
-            <ul>
-                <li><strong>Layer feed:</strong> ~$150-200 (for 45 laying hens)</li>
-                <li><strong>Shavings:</strong> ~$20-30 (monthly replacement)</li>
-                <li><strong>Grit:</strong> ~$5-10 (as needed)</li>
-                <li><strong>Oyster shell:</strong> ~$3 (already budgeted for 3 months)</li>
-                <li><strong>Egg cartons:</strong> $10-20 (if selling eggs)</li>
-                <li><strong>Health supplies:</strong> $5-10 (preventative care)</li>
-            </ul>
-            <p><strong>Monthly Total:</strong> ~$193-273</p>
-            
-            <h3>Annual Costs</h3>
-            <ul>
-                <li><strong>Feed:</strong> ~$2,400 (yearly total)</li>
-                <li><strong>Shavings:</strong> ~$240-360</li>
-                <li><strong>Grit:</strong> ~$60-120</li>
-                <li><strong>Oyster shell:</strong> ~$32 (4 bags per year)</li>
-                <li><strong>Egg cartons:</strong> ~$120-240</li>
-                <li><strong>Health supplies:</strong> ~$60-120</li>
-                <li><strong>Veterinary fund:</strong> ~$200-300 (emergency/annual check-ups)</li>
-                <li><strong>Coop repairs/maintenance:</strong> ~$100-200</li>
-            </ul>
-            <p><strong>Annual Total:</strong> ~$3,212-3,772</p>
-            
-            <div class="income-projection">
-                <h3>Potential Income</h3>
-                <ul>
-                    <li><strong>Egg production:</strong> 45 hens ÷ 10 hens = 4.5 groups × 5-7 eggs/day = 22.5-31.5 eggs/day</li>
-                    <li><strong>Annual production:</strong> 22.5-31.5 × 365 = 8,213-11,498 eggs/year</li>
-                    <li><strong>Egg sales:</strong> 684-958 dozen × $3-5/dozen = $2,052-4,790 potential income</li>
-                </ul>
-                <p><strong>Net annual result:</strong> Loss of $1,720 to profit of $1,018 after ongoing costs</p>
-            </div>
-            
-            <hr>
-            
-            <h2>Family Food Security Analysis</h2>
-            
-            <h3>Egg Production for Family</h3>
-            <ul>
-                <li><strong>Family size:</strong> 12 people</li>
-                <li><strong>Egg needs:</strong> 10 eggs per person per week = 120 eggs/week</li>
-                <li><strong>Weekly production:</strong> 22.5-31.5 eggs/day = 157-220 eggs/week</li>
-                <li><strong>Surplus:</strong> 37-100 extra eggs per week for sharing/trading</li>
-            </ul>
-            
-            <h3>Cost Comparison</h3>
-            <ul>
-                <li><strong>Store-bought organic eggs:</strong> $5-6/dozen</li>
-                <li><strong>Your cost per dozen:</strong> ~$3-4 (including all costs)</li>
-                <li><strong>Weekly savings:</strong> $15-25 on grocery bills</li>
-                <li><strong>Annual savings:</strong> $780-1,300</li>
-            </ul>
-            
-            <h3>Egg Production & Potential Extras</h3>
-            <ul>
-                <li><strong>Family needs:</strong> 120 eggs/week (10 eggs × 12 people)</li>
-                <li><strong>Weekly production:</strong> 157-220 eggs/week</li>
-                <li><strong>Weekly extras:</strong> 37-100 eggs/week</li>
-                <li><strong>Annual extras:</strong> 1,924-5,200 eggs/year</li>
-                <li><strong>Extras in dozens:</strong> 160-433 dozen/year</li>
-            </ul>
-            
-            <h3>Potential Profit from Extras</h3>
-            <ul>
-                <li><strong>If sell extras at $3/dozen:</strong> $480-1,299/year</li>
-                <li><strong>If sell extras at $4/dozen:</strong> $640-1,732/year</li>
-                <li><strong>If sell extras at $5/dozen:</strong> $800-2,165/year</li>
-            </ul>
-            
-            <div class="highlight">
-                <h3>Net Financial Impact (Family + Extras)</h3>
-                <ul>
-                    <li><strong>Annual operating costs:</strong> $3,212-3,772</li>
-                    <li><strong>Value of family eggs:</strong> 6,240 eggs/year = 520 dozen = $1,560-3,120 (store price)</li>
-                    <li><strong>Plus extra sales income:</strong> $480-2,165</li>
-                    <li><strong>Total annual value:</strong> $2,040-5,285</li>
-                    <li><strong>Net annual result:</strong> Loss of $1,172 to profit of $1,513</li>
-                </ul>
-            </div>
-            
-            <h3>Break-Even Timeline</h3>
-            <ul>
-                <li><strong>Setup cost:</strong> $3,736.50</li>
-                <li><strong>Years to break even:</strong> 2.5-6 years (depending on extra egg sales)</li>
-                <li><strong>Best case:</strong> Break even in 2.5 years selling extras at $5/dozen</li>
-                <li><strong>Worst case:</strong> Break even in 6 years with minimal extra sales</li>
-            </ul>
-            
-            <div class="highlight">
-                <h3>Benefits Beyond Cost</h3>
-                <ul>
-                    <li><strong>Fresh, healthy eggs</strong> from well-cared-for chickens</li>
-                    <li><strong>Food independence</strong> from supply chain issues</li>
-                    <li><strong>Educational experience</strong> for family</li>
-                    <li><strong>Garden fertilizer</strong> from chicken waste</li>
-                    <li><strong>Connection to food source</strong></li>
-                </ul>
-            </div>
-            
-            <hr>
-            
-            <h2>Wish List</h2>
-            
-            <h3>Peacocks</h3>
-            <ul>
-                <li><strong>Considerations:</strong> More space required, louder, can be flighty, need secure roosting</li>
-                <li><strong>Advantages:</strong> Beautiful ornamental birds, natural pest control, good watchdogs, long lifespan (15-20 years)</li>
-                <li><strong>Requirements:</strong> 6-8 foot fencing, more expensive, may wander, predator protection needed</li>
-            </ul>
-        </main>
+        <div class="nav">
+            <a href="/chickens.html">View Chicken Business Plan</a>
+        </div>
         
-        <footer style="text-align: center; padding: 20px; color: #666; font-size: 0.9em;">
-            <p>&copy; 2026 Chicken Business Plan | Sustainable Poultry Farming</p>
-        </footer>
+        <p style="margin-top: 40px; opacity: 0.7;">
+            Learning by failing, one chicken at a time
+        </p>
     </div>
 </body>
 </html>
