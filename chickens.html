@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>6 Retards + Chickens</title>
+    <title>Chicken Business Plan - 6 Retards + Chickens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Century+Gothic:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,309 +12,471 @@
             box-sizing: border-box;
         }
         
-        html, body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: #4f5974;
+        body {
+            font-family: 'Century Gothic', sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background-color: #cdcdcd;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            height: 100%;
-            width: 100%;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        header {
+            text-align: center;
+            padding: 50px 0 40px 0;
+            background: linear-gradient(180deg, #4f5974 0%, #36454f 50%, #2c3e50 100%);
+            color: white;
+            margin-bottom: 0;
+            position: relative;
             overflow: hidden;
         }
         
-        body {
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 25px auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 0;
-            position: relative;
         }
         
-        .logo-container {
+        .header-logo img {
             width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        
-        .logo {
-            max-width: 80vw;
-            max-height: 80vh;
-            width: auto;
             height: auto;
             object-fit: contain;
+        }
+        
+        h1 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+        
+        .header-subtitle {
+            font-size: 1.2em;
+            font-weight: 400;
             opacity: 0.9;
-            mix-blend-mode: multiply;
-            transition: opacity 0.3s ease;
+            margin-bottom: 30px;
         }
         
-        /* Hamburger Menu */
-        .menu-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
+        .nav {
             background: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
+            border-radius: 10px;
+            padding: 10px;
+            display: inline-flex;
+            gap: 8px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
         
-        .menu-toggle:hover {
-            background: rgba(255, 255, 255, 1);
-            transform: scale(1.05);
+        .nav a {
+            color: #1d1d1f;
+            text-decoration: none;
+            font-weight: 400;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
-        .hamburger {
-            width: 24px;
-            height: 20px;
+        .nav a:hover {
+            background: rgba(79, 89, 116, 0.1);
+        }
+        
+        .nav a.active {
+            background: #4f5974;
+            color: white;
+        }
+        
+        .content-section {
+            width: 100%;
+            margin-bottom: 2px;
             position: relative;
         }
         
-        .hamburger span {
-            display: block;
+        .section-header {
+            background: linear-gradient(135deg, #4f5974 0%, #36454f 100%);
+            color: white;
+            padding: 25px 40px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-header::before {
+            content: '';
             position: absolute;
-            height: 3px;
-            width: 100%;
-            background: #4f5974;
-            border-radius: 3px;
-            opacity: 1;
-            left: 0;
-            transform: rotate(0deg);
-            transition: all 0.25s ease-in-out;
-        }
-        
-        .hamburger span:nth-child(1) {
-            top: 0px;
-        }
-        
-        .hamburger span:nth-child(2) {
-            top: 8px;
-        }
-        
-        .hamburger span:nth-child(3) {
-            top: 16px;
-        }
-        
-        .menu-toggle.active .hamburger span:nth-child(1) {
-            top: 8px;
-            transform: rotate(135deg);
-        }
-        
-        .menu-toggle.active .hamburger span:nth-child(2) {
-            opacity: 0;
-            left: -60px;
-        }
-        
-        .menu-toggle.active .hamburger span:nth-child(3) {
-            top: 8px;
-            transform: rotate(-135deg);
-        }
-        
-        /* Menu Panel */
-        .menu-panel {
-            position: fixed;
             top: 0;
-            right: -400px;
-            width: 350px;
-            height: 100vh;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
-            transition: right 0.3s ease;
-            z-index: 999;
-            overflow-y: auto;
-        }
-        
-        .menu-panel.active {
+            left: 0;
             right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
         
-        .menu-header {
-            padding: 30px 20px 20px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .menu-header h3 {
-            color: #4f5974;
-            font-size: 1.5em;
-            font-weight: 600;
+        .section-header h2 {
+            font-size: 2em;
+            font-weight: 700;
             margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
         }
         
-        .menu-header p {
+        .section-content {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-top: none;
+        }
+        
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 0;
+        }
+        
+        .item-box {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .item-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #4f5974 0%, #36454f 100%);
+        }
+        
+        .item-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .item-box h3 {
+            color: #4f5974;
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .item-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .item-box li {
+            margin: 10px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            font-size: 0.95em;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .item-box li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #4f5974;
+            font-weight: bold;
+        }
+        
+        .item-box li:last-child {
+            border-bottom: none;
+        }
+        
+        .cost-highlight {
+            background: linear-gradient(135deg, #4f5974 0%, #36454f 100%);
+            color: white;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .cost-large {
+            background: linear-gradient(135deg, #4f5974 0%, #36454f 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .summary-section {
+            background: linear-gradient(135deg, rgba(52, 199, 89, 0.1) 0%, rgba(48, 176, 199, 0.1) 100%);
+            border-left: 5px solid #34c759;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+        
+        .summary-section h2 {
+            color: #1d1d1f;
+            font-size: 1.8em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .summary-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 0.95em;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            font-weight: 500;
+        }
+        
+        .total-cost {
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #1d1d1f;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
             color: #666;
             font-size: 0.9em;
-        }
-        
-        .menu-items {
-            padding: 20px 0;
-        }
-        
-        .menu-item {
-            display: block;
-            padding: 15px 20px;
-            color: #1d1d1f;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1em;
-            transition: all 0.2s ease;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        
-        .menu-item:hover {
-            background: rgba(79, 89, 116, 0.1);
-            padding-left: 30px;
-        }
-        
-        .menu-item:first-child {
-            background: rgba(79, 89, 116, 0.05);
-            font-weight: 600;
-        }
-        
-        .menu-item:first-child:hover {
-            background: rgba(79, 89, 116, 0.15);
-        }
-        
-        /* Overlay */
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 998;
-        }
-        
-        .overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        /* Footer */
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            text-align: center;
-            padding: 15px 0;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.8em;
-            z-index: 100;
-        }
-        
-        /* Logo dim when menu open */
-        .logo.dimmed {
-            opacity: 0.3;
+            background: white;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
         @media (max-width: 768px) {
-            .menu-panel {
-                width: 280px;
-                right: -280px;
+            h1 {
+                font-size: 2.2em;
             }
             
-            .menu-toggle {
-                top: 15px;
-                right: 15px;
-                width: 45px;
-                height: 45px;
+            .header-logo {
+                width: 80px;
+                height: 80px;
             }
             
-            .logo {
-                max-width: 90vw;
-                max-height: 90vh;
+            .section-content {
+                padding: 25px 20px;
+            }
+            
+            .items-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .nav {
+                flex-direction: column;
+                gap: 4px;
+            }
+            
+            .nav a {
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Hamburger Menu -->
-    <div class="menu-toggle" id="menuToggle">
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="header-logo">
+                    <img src="chickens-logo.jpeg" alt="Chickens Logo">
+                </div>
+                <h1>Chicken Business Plan</h1>
+                <p class="header-subtitle">Comprehensive Guide to Sustainable Poultry Farming</p>
+                <nav class="nav">
+                    <a href="/">Home</a>
+                    <a href="/chickens.html" class="active">Chicken Business Plan</a>
+                </nav>
+            </div>
+        </header>
+        
+        <div class="content-section">
+            <div class="section-header">
+                <h2>What We Need</h2>
+            </div>
+            <div class="section-content">
+                <div class="items-grid">
+                    <div class="item-box">
+                        <h3>Chickens</h3>
+                        <ul>
+                            <li><strong>Total:</strong> <span class="cost-highlight">45 chickens</span> (25% failure rate)</li>
+                            <li><strong>Target:</strong> <span class="cost-highlight">3 per person</span> for 10-12 people</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="item-box">
+                        <h3>Breeds & Costs</h3>
+                        <ul>
+                            <li><strong>Blue Austrolorp:</strong> 15 × $7 = <span class="cost-highlight">$105</span></li>
+                            <li><strong>Delawares:</strong> 15 × $10 = <span class="cost-highlight">$150</span></li>
+                            <li><strong>Black Copper Marans:</strong> 15 × $10 = <span class="cost-highlight">$150</span></li>
+                            <li><strong>Total:</strong> <span class="cost-large">$405</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="item-box">
+                        <h3>Infrastructure</h3>
+                        <ul>
+                            <li><strong>Brooding Boxes:</strong> 2 boxes, 6' × 7.5' each</li>
+                            <li><strong>Electric Mesh Fencing:</strong> 164' kit - <span class="cost-highlight">$199</span></li>
+                            <li><strong>Total Space:</strong> <span class="cost-highlight">1000 sq ft</span> needed</li>
+                            <li><strong>Mobile Coop:</strong> 6' × 10' (holds 15-50 chickens)</li>
+                            <li><strong>Trailer:</strong> 6' × 10'-12 - <span class="cost-highlight">$1600</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="item-box">
+                        <h3>Feed & Nutrition</h3>
+                        <ul>
+                            <li><strong>8 weeks feed:</strong> 500lbs at $0.50/lb = <span class="cost-highlight">$250</span></li>
+                            <li><strong>18 weeks feed:</strong> 1500lbs at $0.50/lb = <span class="cost-highlight">$750</span></li>
+                            <li><strong>Poultry grit:</strong> <span class="cost-highlight">$8</span></li>
+                            <li><strong>Oyster shell:</strong> 5 lbs - <span class="cost-highlight">$8</span> (3 months)</li>
+                            <li><strong>Feed Storage:</strong> <span class="cost-highlight">$50</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="item-box">
+                        <h3>Housing & Supplies</h3>
+                        <ul>
+                            <li><strong>Shavings:</strong> 5 × 8 cu ft = <span class="cost-highlight">$40.50</span></li>
+                            <li><strong>Nesting boxes:</strong> 12 boxes (free DIY or <span class="cost-highlight">$180</span>)</li>
+                            <li><strong>Brooding:</strong> 2 × 105L totes = <span class="cost-highlight">$30</span></li>
+                            <li><strong>Housing:</strong> IBC totes (free) until outside</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="item-box">
+                        <h3>Heating & Equipment</h3>
+                        <ul>
+                            <li><strong>Heat lamps:</strong> 2 × $15 = <span class="cost-highlight">$30</span></li>
+                            <li><strong>Thermometers:</strong> 2 × $7 = <span class="cost-highlight">$14</span></li>
+                            <li><strong>Spare bulbs:</strong> <span class="cost-highlight">$30</span></li>
+                            <li><strong>Waterer & feeders:</strong> <span class="cost-highlight">$60</span></li>
+                            <li><strong>Ventilation fan:</strong> <span class="cost-highlight">$80</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="item-box">
+                        <h3>Health & Safety</h3>
+                        <ul>
+                            <li><strong>Hardware cloth:</strong> 100' × 2' = <span class="cost-highlight">$80</span></li>
+                            <li><strong>Cleaning supplies:</strong> <span class="cost-highlight">$30</span></li>
+                            <li><strong>Tools:</strong> Shovel, scoop, rake, gloves</li>
+                            <li><strong>Dust bath:</strong> Sawmill (free)</li>
+                            <li><strong>First aid:</strong> Covered</li>
+                            <li><strong>Waste:</strong> Manure as fertilizer</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="item-box">
+                        <h3>Construction</h3>
+                        <ul>
+                            <li><strong>Materials:</strong> <span class="cost-highlight">$0</span> (already have)</li>
+                            <li><strong>Roosting bars:</strong> TBD ($35-70 each, need 8-10)</li>
+                            <li><strong>Ramp:</strong> Covered</li>
+                            <li><strong>Wheelbarrow:</strong> Covered</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="item-box">
+                        <h3>Seasonal Protection</h3>
+                        <ul>
+                            <li><strong>Winter:</strong> Insulation, windbreaks (TBD)</li>
+                            <li><strong>Summer:</strong> Cooling (TBD)</li>
+                            <li><strong>Power:</strong> Backup not needed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    
-    <!-- Menu Panel -->
-    <div class="menu-panel" id="menuPanel">
-        <div class="menu-header">
-            <h3>6 Retards + Chickens</h3>
-            <p>Navigation</p>
+        
+        <div class="summary-section">
+            <h2>Cost Summary</h2>
+            <div class="summary-grid">
+                <div class="summary-item"><strong>Chickens:</strong> $405</div>
+                <div class="summary-item"><strong>Infrastructure:</strong> $1,799</div>
+                <div class="summary-item"><strong>Feed:</strong> $1,008</div>
+                <div class="summary-item"><strong>Supplies:</strong> $70.50</div>
+                <div class="summary-item"><strong>Equipment:</strong> $214</div>
+                <div class="summary-item"><strong>Health/Safety:</strong> $110</div>
+                <div class="summary-item"><strong>Storage:</strong> $50</div>
+                <div class="summary-item"><strong>Ventilation:</strong> $80</div>
+            </div>
+            <div class="total-cost">
+                Total Initial Investment: <span class="cost-large">~$3,736.50</span>
+            </div>
         </div>
-        <div class="menu-items">
-            <a href="/chickens.html" class="menu-item">🐔 Chickens</a>
-            <a href="#" class="menu-item">📊 Business Plan</a>
-            <a href="#" class="menu-item">📅 Timeline</a>
-            <a href="#" class="menu-item">💰 Budget</a>
-            <a href="#" class="menu-item">🏡 Infrastructure</a>
-            <a href="#" class="menu-item">📈 Projections</a>
-            <a href="#" class="menu-item">👥 Family</a>
-            <a href="#" class="menu-item">📝 Notes</a>
-        </div>
+        
+        <footer class="footer">
+            <p>© 2026 6 Retards | Sustainable Family Farming</p>
+        </footer>
     </div>
-    
-    <!-- Overlay -->
-    <div class="overlay" id="overlay"></div>
-    
-    <!-- Main Content -->
-    <div class="logo-container">
-        <img src="gr-logoa.png" alt="6 Retards Logo" class="logo" id="logo">
-    </div>
-    
-    <!-- Footer -->
-    <div class="footer">
-        <p>&​copy; 2026 6 Retards | Sustainable Family Farming</p>
-    </div>
-    
-    <script>
-        // Menu functionality
-        const menuToggle = document.getElementById('menuToggle');
-        const menuPanel = document.getElementById('menuPanel');
-        const overlay = document.getElementById('overlay');
-        const logo = document.getElementById('logo');
-        
-        function toggleMenu() {
-            menuToggle.classList.toggle('active');
-            menuPanel.classList.toggle('active');
-            overlay.classList.toggle('active');
-            logo.classList.toggle('dimmed');
-        }
-        
-        menuToggle.addEventListener('click', toggleMenu);
-        overlay.addEventListener('click', toggleMenu);
-        
-        // Close menu when clicking a link
-        document.querySelectorAll('.menu-item').forEach(item => {
-            item.addEventListener('click', () => {
-                toggleMenu();
-            });
-        });
-        
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && menuPanel.classList.contains('active')) {
-                toggleMenu();
-            }
-        });
-    </script>
 </body>
 </html>
