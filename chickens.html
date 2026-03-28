@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>+ Chickens</title>
-    <link href="https://fonts.googleapis.com/css2?family=Century+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <title>+ chickens</title>
+    <link href="https://fonts.googleapis.com/css2?family=Century+Gothic:wght@400;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,8 +15,10 @@
         body {
             font-family: 'Century Gothic', sans-serif;
             line-height: 1.6;
-            color: #1d1d1f;
-            background-color: #ffffff;
+            background: white;
+            color: #5e5e5e;
+            margin: 0;
+            padding: 0;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -29,11 +31,12 @@
         
         header {
             text-align: center;
-            padding: 60px 0 40px 0;
+            padding: 5px 0 10px 0;
             background: linear-gradient(180deg, #4f5974 0%, #36454f 50%, #2c3e50 100%);
             color: white;
             position: relative;
             overflow: hidden;
+            height: 325px;
         }
         
         header::before {
@@ -53,15 +56,9 @@
         }
         
         .header-logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px auto;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            padding: 15px;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 270px;
+            height: 270px;
+            margin: 0 auto -10px auto;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -70,18 +67,19 @@
         .header-logo img {
             width: 100%;
             height: auto;
-            border-radius: 50%;
             object-fit: cover;
+            opacity: 0.9;
+            mix-blend-mode: multiply;
         }
         
         .nav {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-radius: 12px;
-            padding: 8px;
+            border-radius: 8px;
+            padding: 6px;
             display: inline-flex;
-            gap: 6px;
+            gap: 4px;
             border: 1px solid rgba(0, 0, 0, 0.1);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
         }
@@ -90,10 +88,10 @@
             color: #1d1d1f;
             text-decoration: none;
             font-weight: 500;
-            padding: 8px 16px;
-            border-radius: 8px;
+            padding: 6px 12px;
+            border-radius: 6px;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-size: 0.9em;
+            font-size: 0.8em;
         }
         
         .nav a:hover {
@@ -106,7 +104,7 @@
         }
         
         .content-wrapper {
-            padding: 60px 0;
+            padding: 15px 0 20px 0;
         }
         
         .business-plan {
@@ -115,6 +113,104 @@
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             border: 1px solid rgba(0, 0, 0, 0.04);
+            margin-bottom: 30px;
+        }
+        
+        .business-content {
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .business-content h2 {
+            font-size: 1.5em;
+            font-weight: 400;
+            color: #1e1e1e;
+            font-family: 'Poppins', sans-serif;
+            text-transform: lowercase;
+            margin: 10px 0 20px 0;
+            border-bottom: 2px solid #4f5974;
+            padding-bottom: 10px;
+        }
+        
+        .business-content h2.shitshow {
+            color: #1e1e1e !important;
+            font-size: 1.5em !important;
+            font-weight: 400 !important;
+            font-family: 'Poppins', sans-serif !important;
+            text-transform: lowercase !important;
+            margin: 0 0 20px 0 !important;
+            border-bottom: 2px solid #4f5974 !important;
+            padding-bottom: 10px !important;
+        }
+        
+        .business-content p.total-cost {
+            background: #ffcccc;
+            color: #cc0000;
+            font-size: 1.0em;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 15px;
+            margin: 0 0 10px 0;
+        }
+        
+        .business-content p.never-box {
+            background: #ccffcc;
+            color: #006600;
+            font-size: 2.5em;
+            font-weight: 900;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        
+        .business-content h3 {
+            font-size: 1.1em;
+            font-weight: 400;
+            color: #1e1e1e;
+            font-family: 'Poppins', sans-serif;
+            text-transform: lowercase;
+            margin: 15px 0 5px 0;
+        }
+        
+        .business-content h3.birdseye {
+            font-size: 1.3em;
+            text-align: center;
+            margin: 15px 0 20px 0;
+            border-bottom: 2px solid #4f5974;
+            padding-bottom: 10px;
+        }
+        
+        .business-content p {
+            color: #4c4c4c;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .cost-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .cost-list li {
+            color: #4c4c4c;
+            margin: 10px 0;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .total-cost {
+            font-size: 1.4em;
+            color: #4f5974;
+            font-weight: 700;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(79, 89, 116, 0.05);
+            border-radius: 8px;
+            text-align: center;
         }
         
         .section {
@@ -127,24 +223,18 @@
         }
         
         .section-header {
-            margin-bottom: 40px;
-        }
-        
-        .section-number {
-            font-size: 0.9em;
-            font-weight: 700;
-            color: #4f5974;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
+            margin-bottom: 30px;
         }
         
         .section-title {
-            font-size: 2.5em;
-            font-weight: 700;
-            color: #1d1d1f;
-            margin-bottom: 16px;
+            font-size: 2em;
+            font-weight: 400;
+            color: #1e1e1e;
+            margin-bottom: 15px;
+            text-align: center;
             letter-spacing: -0.02em;
+            font-family: 'Poppins', sans-serif;
+            text-transform: none;
         }
         
         .section-subtitle {
@@ -189,9 +279,11 @@
         
         .card-title {
             font-size: 1.4em;
-            font-weight: 700;
+            font-weight: 400;
             color: #1d1d1f;
             margin-bottom: 12px;
+            font-family: 'Poppins', sans-serif;
+            text-transform: lowercase;
         }
         
         .card-description {
@@ -237,9 +329,11 @@
         
         .highlight-box h3 {
             font-size: 1.6em;
-            font-weight: 700;
+            font-weight: 400;
             color: #1d1d1f;
             margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            text-transform: lowercase;
         }
         
         .financial-summary {
@@ -342,6 +436,165 @@
         * {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        
+        /* Hamburger Menu */
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .menu-toggle:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.05);
+        }
+        
+        .hamburger {
+            width: 24px;
+            height: 20px;
+            position: relative;
+        }
+        
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: #4f5974;
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hamburger span:nth-child(1) {
+            top: 0px;
+        }
+        
+        .hamburger span:nth-child(2) {
+            top: 8px;
+        }
+        
+        .hamburger span:nth-child(3) {
+            top: 16px;
+        }
+        
+        .menu-toggle.active .hamburger span:nth-child(1) {
+            top: 8px;
+            transform: rotate(135deg);
+        }
+        
+        .menu-toggle.active .hamburger span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+        
+        .menu-toggle.active .hamburger span:nth-child(3) {
+            top: 8px;
+            transform: rotate(-135deg);
+        }
+        
+        /* Menu Panel */
+        .menu-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: right 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+            overflow-y: auto;
+        }
+        
+        .menu-panel.active {
+            right: 0;
+        }
+        
+        .menu-header {
+            padding: 5px 20px 2px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .menu-items {
+            padding: 20px 0;
+        }
+        
+        .menu-item {
+            display: block;
+            padding: 15px 20px;
+            color: #1d1d1f;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 1.1em;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .menu-item:hover {
+            background: rgba(79, 89, 116, 0.1);
+            padding-left: 30px;
+        }
+        
+        .menu-item:first-child {
+            background: rgba(79, 89, 116, 0.05);
+            font-weight: 700;
+        }
+        
+        .menu-item:first-child:hover {
+            background: rgba(79, 89, 116, 0.15);
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 998;
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .logo.dimmed {
+            opacity: 0.3;
+        }
+        
+        @media (max-width: 768px) {
+            .menu-panel {
+                width: 280px;
+                right: -280px;
+            }
+            
+            .menu-toggle {
+                top: 15px;
+                right: 15px;
+                width: 45px;
+                height: 45px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -349,189 +602,202 @@
         <div class="container">
             <div class="header-content">
                 <div class="header-logo">
-                    <img src="chickens-logo.jpeg" alt="Chickens Logo">
+                    <img src="chickens-logo.png" alt="Chickens Logo">
                 </div>
                 <nav class="nav">
-                    <a href="/">Home</a>
-                    <a href="/chickens.html" class="active">Business Plan</a>
+                    <a href="index.html">+ home</a>
+                    <a href="chickens.html" class="active">+ chickens</a>
                 </nav>
             </div>
         </div>
     </header>
     
+    <!-- Hamburger Menu -->
+    <div class="menu-toggle" id="menuToggle">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    
+    <!-- Menu Panel -->
+    <div class="menu-panel" id="menuPanel">
+        <div class="menu-header">
+            <img src="gr-logoa.png" alt="6r Logo" style="width: 150px; height: 150px; display: block; margin: 0 auto;">
+        </div>
+        <div class="menu-items">
+            <a href="index.html" class="menu-item">🏠 + home</a>
+            <a href="chickens.html" class="menu-item">🐔 + chickens</a>
+            <a href="food-budget.html" class="menu-item">🍽️ + food budget</a>
+            <a href="family-member.html" class="menu-item">👥 + family member</a>
+            <a href="notes.html" class="menu-item">📝 + notes</a>
+            <a href="calendar.html" class="menu-item">📅 + calendar</a>
+            <a href="meal-requests.html" class="menu-item">🍽️ + meal requests</a>
+            <a href="grocery-list.html" class="menu-item">🛒 + grocery list</a>
+        </div>
+    </div>
+    
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+    
     <div class="container">
         <div class="content-wrapper">
+            <h1 class="section-title">the straight poop from the coop...</h1>
             <div class="business-plan">
-                <section class="section">
-                    <div class="section-header">
-                        <div class="section-number">01</div>
-                        <h1 class="section-title">Executive Summary</h1>
-                        <p class="section-subtitle">A comprehensive plan for establishing a sustainable chicken farming operation providing food security and potential income for our family of 10-12 people.</p>
-                    </div>
+                <div class="business-content">
+                    <h3 class="sub-heading birdseye">the bird's eye overview</h3>
                     
-                    <div class="content-grid">
-                        <div class="content-card">
-                            <div class="card-icon">🐔</div>
-                            <h3 class="card-title">Fleet Overview</h3>
-                            <p class="card-description">Starting with 45 chickens to ensure robust laying population after natural attrition.</p>
-                            <ul class="spec-list">
-                                <li><span class="spec-label">Total Chickens</span><span class="spec-value">45</span></li>
-                                <li><span class="spec-label">Per Person</span><span class="spec-value">3</span></li>
-                                <li><span class="spec-label">Failure Rate</span><span class="spec-value">25%</span></li>
-                            </ul>
-                        </div>
-                        
-                        <div class="content-card">
-                            <div class="card-icon">🏡</div>
-                            <h3 class="card-title">Infrastructure</h3>
-                            <p class="card-description">Proper housing and containment systems for chicken health and safety.</p>
-                            <ul class="spec-list">
-                                <li><span class="spec-label">Space Required</span><span class="spec-value">1000 sq ft</span></li>
-                                <li><span class="spec-label">Mobile Coop</span><span class="spec-value">6' × 10'</span></li>
-                                <li><span class="spec-label">Fencing</span><span class="spec-value">164'</span></li>
-                            </ul>
-                        </div>
-                        
-                        <div class="content-card">
-                            <div class="card-icon">🌾</div>
-                            <h3 class="card-title">Nutrition</h3>
-                            <p class="card-description">Complete feeding strategy for optimal health and egg production.</p>
-                            <ul class="spec-list">
-                                <li><span class="spec-label">First 18 Weeks</span><span class="spec-value">1500 lbs</span></li>
-                                <li><span class="spec-label">Cost per Pound</span><span class="spec-value">$0.50</span></li>
-                                <li><span class="spec-label">Storage</span><span class="spec-value">Secure</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-                
-                <section class="section">
-                    <div class="section-header">
-                        <div class="section-number">02</div>
-                        <h2 class="section-title">Breeds & Investment</h2>
-                        <p class="section-subtitle">Carefully selected breeds for optimal egg production and climate adaptability.</p>
-                    </div>
+                    <h3 class="sub-heading">the size</h3>
+                    <p>1,000 square feet (~0.023 acres)<br>
+                    - 22 sq ft per chicken (double minimum recommendation)</p>
                     
-                    <div class="highlight-box">
-                        <h3>Selected Breeds</h3>
-                        <div class="content-grid">
-                            <div class="content-card">
-                                <h4 class="card-title">Blue Austrolorp</h4>
-                                <ul class="spec-list">
-                                    <li><span class="spec-label">Quantity</span><span class="spec-value">15</span></li>
-                                    <li><span class="spec-label">Cost Each</span><span class="spec-value">$7</span></li>
-                                    <li><span class="spec-label">Total</span><span class="spec-value">$105</span></li>
-                                </ul>
-                            </div>
-                            
-                            <div class="content-card">
-                                <h4 class="card-title">Delawares</h4>
-                                <ul class="spec-list">
-                                    <li><span class="spec-label">Quantity</span><span class="spec-value">15</span></li>
-                                    <li><span class="spec-label">Cost Each</span><span class="spec-value">$10</span></li>
-                                    <li><span class="spec-label">Total</span><span class="spec-value">$150</span></li>
-                                </ul>
-                            </div>
-                            
-                            <div class="content-card">
-                                <h4 class="card-title">Black Copper Marans</h4>
-                                <ul class="spec-list">
-                                    <li><span class="spec-label">Quantity</span><span class="spec-value">15</span></li>
-                                    <li><span class="spec-label">Cost Each</span><span class="spec-value">$10</span></li>
-                                    <li><span class="spec-label">Total</span><span class="spec-value">$150</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <section class="section">
-                    <div class="section-header">
-                        <div class="section-number">03</div>
-                        <h2 class="section-title">Equipment & Supplies</h2>
-                        <p class="section-subtitle">Essential equipment for optimal chicken care and farm management.</p>
-                    </div>
+                    <h3 class="sub-heading">the flock</h3>
+                    <p>45 chickens<br>
+                    - 3 chickens per person family of 10-12<br>
+                    - accounting for 25% failure rate</p>
                     
-                    <div class="content-grid">
-                        <div class="content-card">
-                            <div class="card-icon">🏠</div>
-                            <h3 class="card-title">Housing</h3>
-                            <ul class="spec-list">
-                                <li><span class="spec-label">Shavings</span><span class="spec-value">$40.50</span></li>
-                                <li><span class="spec-label">Nesting Boxes</span><span class="spec-value">$180</span></li>
-                                <li><span class="spec-label">Brooding</span><span class="spec-value">$30</span></li>
-                            </ul>
-                        </div>
-                        
-                        <div class="content-card">
-                            <div class="card-icon">🔥</div>
-                            <h3 class="card-title">Climate Control</h3>
-                            <ul class="spec-list">
-                                <li><span class="spec-label">Heat Lamps</span><span class="spec-value">$30</span></li>
-                                <li><span class="spec-label">Thermometers</span><span class="spec-value">$14</span></li>
-                                <li><span class="spec-label">Ventilation</span><span class="spec-value">$80</span></li>
-                            </ul>
-                        </div>
-                        
-                        <div class="content-card">
-                            <div class="card-icon">🛡️</div>
-                            <h3 class="card-title">Health & Safety</h3>
-                            <ul class="spec-list">
-                                <li><span class="spec-label">Hardware Cloth</span><span class="spec-value">$80</span></li>
-                                <li><span class="spec-label">Cleaning Supplies</span><span class="spec-value">$30</span></li>
-                                <li><span class="spec-label">First Aid</span><span class="spec-value">Stocked</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-                
-                <section class="section">
-                    <div class="section-header">
-                        <div class="section-number">04</div>
-                        <h2 class="section-title">Financial Summary</h2>
-                        <p class="section-subtitle">Complete breakdown of initial investment and ongoing operational costs.</p>
-                    </div>
+                    <h3 class="sub-heading">the food</h3>
+                    <p>weeks 0-8: ~300 lbs (3/4-1 lb per chick weekly)<br>
+                    weeks 8-18: ~675 lbs (1.5 lb per pullet weekly)<br>
+                    total: ~1000 lbs</p>
                     
-                    <div class="financial-summary">
-                        <div class="financial-grid">
-                            <div class="financial-item">
-                                <div class="financial-amount">$405</div>
-                                <div class="financial-label">Chickens</div>
-                            </div>
-                            <div class="financial-item">
-                                <div class="financial-amount">$1,799</div>
-                                <div class="financial-label">Infrastructure</div>
-                            </div>
-                            <div class="financial-item">
-                                <div class="financial-amount">$1,008</div>
-                                <div class="financial-label">Feed (18 wks)</div>
-                            </div>
-                            <div class="financial-item">
-                                <div class="financial-amount">$214</div>
-                                <div class="financial-label">Equipment</div>
-                            </div>
-                            <div class="financial-item">
-                                <div class="financial-amount">$110</div>
-                                <div class="financial-label">Health/Safety</div>
-                            </div>
-                            <div class="financial-item">
-                                <div class="financial-amount">$120.50</div>
-                                <div class="financial-label">Supplies</div>
-                            </div>
-                        </div>
-                        
-                        <div class="total-investment">
-                            <div class="total-amount">$3,736.50</div>
-                            <div class="total-label">Total Initial Investment</div>
-                        </div>
-                    </div>
-                </section>
+                    <h3 class="sub-heading">the coop</h3>
+                    <p>mobile coop 6' × 12'<br>
+                    trailer 6' × 12'</p>
+                    
+                    <h3 class="sub-heading">the run</h3>
+                    <p>predator cloth<br>
+                    164' electric mesh fencing</p>
+                </div>
             </div>
-        </div>
+            
+            <div class="business-plan">
+                <div class="business-content">
+                    <h2 class="section-title">the MOST important shit</h2>
+                    
+                    <h3 class="sub-heading">the flock</h3>
+                    <p>- breeds<br>
+                    - blue astrolorp: 15 chickens × $7 = $105<br>
+                    - delawares: 15 chickens × $10 = $150<br>
+                    - black copper marans: 15 chickens × $10 = $150</p>
+                    
+                    <p><strong>total chick costs: ~$400</strong></p>
+                    
+                    <h3 class="sub-heading">the food</h3>
+                    <p>weeks 0-8: ~300 lbs × $0.50 = $200<br>
+                    weeks 8-18: ~675 lbs × $0.50 = $350<br>
+                    18 weeks-12 months: ~5000 lbs × $0.50 = $2500<br>
+                    supplements: $40/monthly (~$500 yearly)</p>
+                    
+                    <p><strong>total food costs: ~$3,600</strong></p>
+                    
+                    <h3 class="sub-heading">the brooding</h3>
+                    <p>chicken feeders/waterers: $90<br>
+                    heat lamps: $40<br>
+                    bulb replacement: $30<br>
+                    brooding boxes (rubbermade totes): $30<br>
+                    thermometers: $40</p>
+                    
+                    <p><strong>total brooding costs: ~$250</strong></p>
+                    
+                    <h3 class="sub-heading">the coop</h3>
+                    <p>mobile coop 6' × 12': $50 (self-build)<br>
+                    trailer 6'x12': approx $1800 (TBD)<br>
+                    ventilation fan: $80<br>
+                    shavings: 15-20 bags/year (free from sawmill vs $100-160)<br>
+                    12 nesting boxes: $0 (self-built vs $200)</p>
+                    
+                    <p><strong>total coop costs: ~$2000</strong></p>
+                    
+                    <h3 class="sub-heading">the run</h3>
+                    <p>electric mesh fencing 164': $200<br>
+                    predator cloth: $180<br>
+                    dust bath: $0 (sawmill vs $10)</p>
+                    
+                    <h3 class="sub-heading">the cleanup</h3>
+                    <p>shovel: TBD<br>
+                    rake: TBD<br>
+                    gloves: TBD ($20)<br>
+                    wheelbarrow: $0</p>
+                    
+                    <p><strong>total cleanup costs: ~$20</strong></p>
+                </div>
+            </div>
+            
+            <div class="business-plan">
+                <div class="business-content">
+                    <h2 class="section-title">the bottom flocking line</h2>
+                    <p class="total-cost"><strong>0-18 weeks: ~$800<br>
+18 weeks-12 months: ~$3,000<br>
+structure: ~$2,400<br><br>
+<span style="font-size: 1.3em;">total for this chicken shitshow</span><br>
+<span style="font-size: 1.5em;">~$7,000</span></strong></p>
+                </div>
+            </div>
+            
+            <div class="business-plan">
+                <div class="business-content">
+                    <h2 class="section-title">more important shit</h2>
+                    
+                    <h3 class="sub-heading">total flocking eggs</h3>
+                    <p>45 hens × 280 eggs/year = 12,600 total<br>
+25% attrition = 34 hens avg<br>
+actual yield: ~11,000 eggs/year (~920 dozen)</p>
+                    
+                    <h3 class="sub-heading">family food security</h3>
+                    <p>production: 24 eggs/day = 720 eggs/month (60 dozen)<br>
+family consumption: 120/week = 480 eggs/month (40 dozen)<br>
+excess: 240 eggs/month (20 dozen)<br>
+yearly excess: 240 × 12 = 2,880 eggs (240 dozen)</p>
+                    
+                    <h3 class="sub-heading">income from excess</h3>
+                    <p>240 dozen excess/year × $3/dozen = $720<br>
+240 dozen excess/year × $4/dozen = $960<br>
+monthly income: $60-80 from egg sales</p>
+                </div>
+            </div>
+            
+            <div class="business-plan">
+                <div class="business-content">
+                    <h2 class="section-title">time until this shitshow pays off</h2>
+                    <p class="never-box">never</p>
+                </div>
+            </div>
+            
+            </div>
         
-        <footer class="footer">
-            <p>© 2026 6 retards | sustainable family farming</p>
-        </footer>
+        <p class="footer">© 2026 6 retards | sustainable family farming</p>
     </div>
+    
+    <script>
+        // Menu functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const menuPanel = document.getElementById('menuPanel');
+        const overlay = document.getElementById('overlay');
+        
+        function toggleMenu() {
+            menuToggle.classList.toggle('active');
+            menuPanel.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+        
+        menuToggle.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', () => {
+                toggleMenu();
+            });
+        });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && menuPanel.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    </script>
 </body>
 </html>
