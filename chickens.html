@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>6 Retards + Chickens</title>
+    <title>+ Chickens</title>
     <style>
         * {
             margin: 0;
@@ -15,38 +15,58 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #1d1d1f;
-            background-color: #f5f5f7;
+            background-color: ##cdcdcd;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
         
         .container {
-            text-align: center;
-            max-width: 800px;
-            padding: 60px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
-        .logo {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 40px auto;
-            background: rgba(255, 255, 255, 0.8);
+        header {
+            text-align: center;
+            padding: 80px 0 60px 0;
+            background: linear-gradient(180deg, #4f5974 0%, #36454f 50%, #2c3e50 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header-logo {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 30px auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            padding: 20px;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border-radius: 50%;
-            padding: 30px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
-        .logo img {
+        .header-logo img {
             width: 100%;
             height: auto;
             border-radius: 50%;
@@ -54,22 +74,21 @@
         }
         
         h1 {
-            font-size: 4em;
+            font-size: 3.5em;
             font-weight: 600;
-            margin-bottom: 24px;
+            margin-bottom: 16px;
             letter-spacing: -0.02em;
-            background: linear-gradient(180deg, #4f5974 0%, #2c3e50 100%);
+            background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
-        .subtitle {
-            font-size: 1.4em;
+        .header-subtitle {
+            font-size: 1.3em;
             font-weight: 400;
-            color: #424245;
-            margin-bottom: 50px;
-            line-height: 1.5;
+            opacity: 0.9;
+            margin-bottom: 40px;
         }
         
         .nav {
@@ -81,50 +100,172 @@
             display: inline-flex;
             gap: 8px;
             border: 1px solid rgba(0, 0, 0, 0.1);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-            margin: 40px 0;
         }
         
         .nav a {
             color: #1d1d1f;
             text-decoration: none;
             font-weight: 500;
-            padding: 16px 32px;
+            padding: 12px 24px;
             border-radius: 12px;
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            font-size: 1.1em;
+            font-size: 0.95em;
         }
         
         .nav a:hover {
             background: rgba(79, 89, 116, 0.1);
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
         
-        .footer-text {
-            margin-top: 60px;
-            color: #86868b;
-            font-size: 1.1em;
-            font-weight: 400;
+        .nav a.active {
+            background: #4f5974;
+            color: white;
+        }
+        
+        .content-wrapper {
+            padding: 60px 0;
+        }
+        
+        .content {
+            background: white;
+            border-radius: 24px;
+            padding: 60px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+        
+        h2 {
+            color: #1d1d1f;
+            font-size: 2.2em;
+            font-weight: 600;
+            margin: 40px 0 24px 0;
+            letter-spacing: -0.02em;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding-bottom: 16px;
+        }
+        
+        h2:first-child {
+            margin-top: 0;
+        }
+        
+        h3 {
+            color: #1d1d1f;
+            font-size: 1.5em;
+            font-weight: 600;
+            margin: 32px 0 16px 0;
+            letter-spacing: -0.01em;
+        }
+        
+        h4 {
+            color: #424245;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin: 24px 0 12px 0;
+        }
+        
+        ul, ol {
+            margin: 20px 0 20px 30px;
+        }
+        
+        li {
+            margin: 12px 0;
+            color: #424245;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+        
+        strong {
+            color: #1d1d1f;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1), transparent);
+            margin: 60px 0;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 32px;
+            margin: 24px 0;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        }
+        
+        .card-success {
+            background: linear-gradient(135deg, rgba(52, 199, 89, 0.1) 0%, rgba(48, 176, 199, 0.1) 100%);
+            border-left: 4px solid #34c759;
+        }
+        
+        .card-info {
+            background: linear-gradient(135deg, rgba(0, 122, 255, 0.1) 0%, rgba(88, 86, 214, 0.1) 100%);
+            border-left: 4px solid #007aff;
+        }
+        
+        .card-warning {
+            background: linear-gradient(135deg, rgba(255, 149, 0, 0.1) 0%, rgba(255, 204, 0, 0.1) 100%);
+            border-left: 4px solid #ff9500;
+        }
+        
+        .card h3 {
+            margin-top: 0;
+            color: #1d1d1f;
+        }
+        
+        .metric {
+            display: inline-block;
+            background: rgba(79, 89, 116, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin: 4px;
+            font-size: 0.9em;
+            color: #4f5974;
+        }
+        
+        .metric-large {
+            font-size: 1.2em;
+            padding: 12px 24px;
+            margin: 8px 4px;
         }
         
         @media (max-width: 768px) {
             .container {
-                padding: 40px 20px;
+                padding: 0 16px;
+            }
+            
+            header {
+                padding: 60px 0 40px 0;
             }
             
             h1 {
-                font-size: 3em;
+                font-size: 2.5em;
             }
             
-            .logo {
-                width: 140px;
-                height: 140px;
-                padding: 20px;
+            .header-logo {
+                width: 100px;
+                height: 100px;
+                padding: 15px;
+            }
+            
+            .content {
+                padding: 32px 24px;
+                border-radius: 20px;
+            }
+            
+            h2 {
+                font-size: 1.8em;
             }
             
             .nav {
                 flex-direction: column;
-                gap: 8px;
+                gap: 4px;
             }
             
             .nav a {
@@ -136,22 +277,251 @@
         * {
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+        
+        /* Hover effects */
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <img src="6rlogo.png" alt="6 Retards Logo">
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="header-logo">
+                    <img src="chickens-logo.png" alt="Chickens Logo">
+                </div>
+                <h1>Chicken Business Plan</h1>
+                <p class="header-subtitle">Comprehensive Guide to Sustainable Poultry Farming</p>
+                <nav class="nav">
+                    <a href="/">Home</a>
+                    <a href="/chickens.html" class="active">Chicken Business Plan</a>
+                </nav>
+            </div>
         </div>
-        <h1>6 Retards + Chickens</h1>
-        <p class="subtitle">We don't know what we're doing, but we're having fun anyway</p>
-        
-        <nav class="nav">
-            <a href="/">Home</a>
-            <a href="/chickens.html">View Chicken Business Plan</a>
-        </nav>
-        
-        <p class="footer-text">Learning by failing, one chicken at a time</p>
+    </header>
+    
+    <div class="container">
+        <div class="content-wrapper">
+            <main class="content">
+                <h2>What We Need</h2>
+                
+                <h3>Chickens</h3>
+                <ul>
+                    <li><strong>Total:</strong> <span class="metric">45 chickens</span> (accounting for 25% failure to thrive rate)</li>
+                    <li><strong>Target:</strong> <span class="metric">3 chickens per person</span> for 10-12 people</li>
+                </ul>
+                
+                <h3>Breeds & Costs</h3>
+                <ul>
+                    <li><strong>Blue Austrolorp:</strong> 15 × $7/female = <span class="metric">$105</span></li>
+                    <li><strong>Delawares:</strong> 15 × $10/female = <span class="metric">$150</span></li>
+                    <li><strong>Black Copper Marans:</strong> 15 × $10/female = <span class="metric">$150</span></li>
+                    <li><strong>Total Chickens:</strong> <span class="metric metric-large">$405</span></li>
+                </ul>
+                
+                <h3>Infrastructure</h3>
+                <ul>
+                    <li><strong>Brooding Boxes:</strong> 2 boxes, 6' × 7.5' each (45 sq ft per box)</li>
+                    <li><strong>Electric Mesh Fencing:</strong> 164' kit for <span class="metric">$199</span> at Tractor Supply</li>
+                    <li><strong>Total Space:</strong> <span class="metric">1000 square feet</span> needed</li>
+                    <li><strong>Mobile Chicken Coop:</strong> 6' × 10' (holds 15-50 chickens)</li>
+                    <li><strong>Trailer:</strong> 6' × 10'-12 for <span class="metric">$1600</span></li>
+                </ul>
+                
+                <h3>Feed & Nutrition</h3>
+                <ul>
+                    <li><strong>8 weeks feed:</strong> 10 × 50lb bags = 500lbs at $0.50/lb = <span class="metric">$250</span></li>
+                    <li><strong>Up to 18 weeks feed:</strong> 30 × 50lb bags = 1500lbs at $0.50/lb = <span class="metric">$750</span></li>
+                    <li><strong>Poultry grit:</strong> <span class="metric">$8</span></li>
+                    <li><strong>Oyster shell (18-20 weeks):</strong> 5 lbs for <span class="metric">$8</span> (lasts ~3 months)</li>
+                    <li><strong>Feed Storage Totes:</strong> <span class="metric">$50</span></li>
+                </ul>
+                
+                <h3>Housing & Supplies</h3>
+                <ul>
+                    <li><strong>Shavings:</strong> 5 × 8 cubic feet bags at $8.10 each = <span class="metric">$40.50</span></li>
+                    <li><strong>Nesting boxes:</strong> 12 boxes (free DIY or <span class="metric">$180</span> purchased at $15 each)</li>
+                    <li><strong>Brooding:</strong> 2 × 105L totes at $15 each = <span class="metric">$30</span></li>
+                    <li><strong>Housing:</strong> IBC totes cut in half (free) until they go outside</li>
+                </ul>
+                
+                <h3>Heating & Equipment</h3>
+                <ul>
+                    <li><strong>Heat lamps:</strong> 2 at $15 each = <span class="metric">$30</span></li>
+                    <li><strong>Brooder thermometers:</strong> 2 at $7 each = <span class="metric">$14</span></li>
+                    <li><strong>Spare bulbs:</strong> <span class="metric">$30</span></li>
+                    <li><strong>Chicken waterer & feeders:</strong> <span class="metric">$60</span></li>
+                    <li><strong>120V ventilation fan:</strong> <span class="metric">$80</span></li>
+                </ul>
+                
+                <h3>Health & Safety</h3>
+                <ul>
+                    <li><strong>Hardware cloth:</strong> 100' × 2' roll for <span class="metric">$80</span></li>
+                    <li><strong>Cleaning supplies:</strong> <span class="metric">$30</span></li>
+                    <li><strong>Tools:</strong> Shovel, scoop, rake, gloves</li>
+                    <li><strong>Dust bath materials:</strong> Sawmill (free)</li>
+                    <li><strong>First aid kit:</strong> Covered</li>
+                    <li><strong>Waste disposal:</strong> Chicken manure as fertilizer for garden</li>
+                </ul>
+                
+                <h3>Construction & Features</h3>
+                <ul>
+                    <li><strong>Building materials for coop:</strong> <span class="metric">$0</span> (already have)</li>
+                    <li><strong>Roosting bars:</strong> TBD (may construct ourselves, $35-70 each if purchased, need 8-10 bars for 45 chickens)</li>
+                    <li><strong>Ramp for mobile coop:</strong> Covered</li>
+                    <li><strong>Wheelbarrow:</strong> Covered</li>
+                </ul>
+                
+                <h3>Seasonal Protection</h3>
+                <ul>
+                    <li><strong>Winter protection:</strong> Insulation, windbreaks (TBD)</li>
+                    <li><strong>Summer cooling:</strong> TBD</li>
+                    <li><strong>Power:</strong> Backup power not needed (power not an issue)</li>
+                </ul>
+                
+                <div class="card card-success">
+                    <h2>Cost Summary</h2>
+                    <ul>
+                        <li><strong>Chickens:</strong> <span class="metric">$405</span></li>
+                        <li><strong>Infrastructure:</strong> <span class="metric">$1,799</span> (fencing $199 + trailer $1600)</li>
+                        <li><strong>Feed:</strong> <span class="metric">$1,008</span> (first 18 weeks)</li>
+                        <li><strong>Supplies:</strong> <span class="metric">$70.50</span> (shavings + grit + oyster shell)</li>
+                        <li><strong>Equipment:</strong> <span class="metric">$214</span> (heating + thermometers + bulbs + waterers/feeders)</li>
+                        <li><strong>Health/Safety:</strong> <span class="metric">$110</span> (hardware cloth + cleaning supplies)</li>
+                        <li><strong>Storage:</strong> <span class="metric">$50</span> (feed totes)</li>
+                        <li><strong>Ventilation:</strong> <span class="metric">$80</span></li>
+                    </ul>
+                    <p><strong>Total Initial Investment:</strong> <span class="metric metric-large">~$3,736.50</span></p>
+                    <p><em>(Note: Some costs are TBD or covered by existing materials)</em></p>
+                </div>
+                
+                <hr>
+                
+                <h2>Ongoing Costs (After 18 Weeks)</h2>
+                
+                <h3>Monthly Costs</h3>
+                <ul>
+                    <li><strong>Layer feed:</strong> ~<span class="metric">$150-200</span> (for 45 laying hens)</li>
+                    <li><strong>Shavings:</strong> ~<span class="metric">$20-30</span> (monthly replacement)</li>
+                    <li><strong>Grit:</strong> ~<span class="metric">$5-10</span> (as needed)</li>
+                    <li><strong>Oyster shell:</strong> ~<span class="metric">$3</span> (already budgeted for 3 months)</li>
+                    <li><strong>Egg cartons:</strong> <span class="metric">$10-20</span> (if selling eggs)</li>
+                    <li><strong>Health supplies:</strong> <span class="metric">$5-10</span> (preventative care)</li>
+                </ul>
+                <p><strong>Monthly Total:</strong> <span class="metric metric-large">~$193-273</span></p>
+                
+                <h3>Annual Costs</h3>
+                <ul>
+                    <li><strong>Feed:</strong> ~<span class="metric">$2,400</span> (yearly total)</li>
+                    <li><strong>Shavings:</strong> ~<span class="metric">$240-360</span></li>
+                    <li><strong>Grit:</strong> ~<span class="metric">$60-120</span></li>
+                    <li><strong>Oyster shell:</strong> ~<span class="metric">$32</span> (4 bags per year)</li>
+                    <li><strong>Egg cartons:</strong> ~<span class="metric">$120-240</span></li>
+                    <li><strong>Health supplies:</strong> ~<span class="metric">$60-120</span></li>
+                    <li><strong>Veterinary fund:</strong> ~<span class="metric">$200-300</span> (emergency/annual check-ups)</li>
+                    <li><strong>Coop repairs/maintenance:</strong> ~<span class="metric">$100-200</span></li>
+                </ul>
+                <p><strong>Annual Total:</strong> <span class="metric metric-large">~$3,212-3,772</span></p>
+                
+                <div class="card card-info">
+                    <h3>Potential Income</h3>
+                    <ul>
+                        <li><strong>Egg production:</strong> 45 hens ÷ 10 hens = 4.5 groups × 5-7 eggs/day = 22.5-31.5 eggs/day</li>
+                        <li><strong>Annual production:</strong> 22.5-31.5 × 365 = 8,213-11,498 eggs/year</li>
+                        <li><strong>Egg sales:</strong> 684-958 dozen × $3-5/dozen = <span class="metric">$2,052-4,790</span> potential income</li>
+                    </ul>
+                    <p><strong>Net annual result:</strong> Loss of <span class="metric">$1,720</span> to profit of <span class="metric">$1,018</span> after ongoing costs</p>
+                </div>
+                
+                <hr>
+                
+                <h2>Family Food Security Analysis</h2>
+                
+                <h3>Egg Production for Family</h3>
+                <ul>
+                    <li><strong>Family size:</strong> <span class="metric">12 people</span></li>
+                    <li><strong>Egg needs:</strong> 10 eggs per person per week = <span class="metric">120 eggs/week</span></li>
+                    <li><strong>Weekly production:</strong> 22.5-31.5 eggs/day = <span class="metric">157-220 eggs/week</span></li>
+                    <li><strong>Surplus:</strong> <span class="metric">37-100 extra eggs</span> per week for sharing/trading</li>
+                </ul>
+                
+                <h3>Cost Comparison</h3>
+                <ul>
+                    <li><strong>Store-bought organic eggs:</strong> <span class="metric">$5-6/dozen</span></li>
+                    <li><strong>Your cost per dozen:</strong> ~<span class="metric">$3-4</span> (including all costs)</li>
+                    <li><strong>Weekly savings:</strong> <span class="metric">$15-25</span> on grocery bills</li>
+                    <li><strong>Annual savings:</strong> <span class="metric">$780-1,300</span></li>
+                </ul>
+                
+                <h3>Egg Production & Potential Extras</h3>
+                <ul>
+                    <li><strong>Family needs:</strong> <span class="metric">120 eggs/week</span> (10 eggs × 12 people)</li>
+                    <li><strong>Weekly production:</strong> <span class="metric">157-220 eggs/week</span></li>
+                    <li><strong>Weekly extras:</strong> <span class="metric">37-100 eggs/week</span></li>
+                    <li><strong>Annual extras:</strong> <span class="metric">1,924-5,200 eggs/year</span></li>
+                    <li><strong>Extras in dozens:</strong> <span class="metric">160-433 dozen/year</span></li>
+                </ul>
+                
+                <h3>Potential Profit from Extras</h3>
+                <ul>
+                    <li><strong>If sell extras at $3/dozen:</strong> <span class="metric">$480-1,299/year</span></li>
+                    <li><strong>If sell extras at $4/dozen:</strong> <span class="metric">$640-1,732/year</span></li>
+                    <li><strong>If sell extras at $5/dozen:</strong> <span class="metric">$800-2,165/year</span></li>
+                </ul>
+                
+                <div class="card card-warning">
+                    <h3>Net Financial Impact (Family + Extras)</h3>
+                    <ul>
+                        <li><strong>Annual operating costs:</strong> <span class="metric">$3,212-3,772</span></li>
+                        <li><strong>Value of family eggs:</strong> 6,240 eggs/year = 520 dozen = <span class="metric">$1,560-3,120</span> (store price)</li>
+                        <li><strong>Plus extra sales income:</strong> <span class="metric">$480-2,165</span></li>
+                        <li><strong>Total annual value:</strong> <span class="metric">$2,040-5,285</span></li>
+                        <li><strong>Net annual result:</strong> Loss of <span class="metric">$1,172</span> to profit of <span class="metric">$1,513</span></li>
+                    </ul>
+                </div>
+                
+                <h3>Break-Even Timeline</h3>
+                <ul>
+                    <li><strong>Setup cost:</strong> <span class="metric">$3,736.50</span></li>
+                    <li><strong>Years to break even:</strong> <span class="metric">2.5-6 years</span> (depending on extra egg sales)</li>
+                    <li><strong>Best case:</strong> Break even in <span class="metric">2.5 years</span> selling extras at $5/dozen</li>
+                    <li><strong>Worst case:</strong> Break even in <span class="metric">6 years</span> with minimal extra sales</li>
+                </ul>
+                
+                <div class="card">
+                    <h3>Benefits Beyond Cost</h3>
+                    <ul>
+                        <li><strong>Fresh, healthy eggs</strong> from well-cared-for chickens</li>
+                        <li><strong>Food independence</strong> from supply chain issues</li>
+                        <li><strong>Educational experience</strong> for family</li>
+                        <li><strong>Garden fertilizer</strong> from chicken waste</li>
+                        <li><strong>Connection to food source</strong></li>
+                    </ul>
+                </div>
+                
+                <hr>
+                
+                <h2>Wish List</h2>
+                
+                <h3>Peacocks</h3>
+                <ul>
+                    <li><strong>Considerations:</strong> More space required, louder, can be flighty, need secure roosting</li>
+                    <li><strong>Advantages:</strong> Beautiful ornamental birds, natural pest control, good watchdogs, long lifespan (15-20 years)</li>
+                    <li><strong>Requirements:</strong> 6-8 foot fencing, more expensive, may wander, predator protection needed</li>
+                </ul>
+            </main>
+            
+            <footer style="text-align: center; padding: 40px 0; color: #86868b; font-size: 0.9em;">
+                <p>&​copy; 2026 6 Retards + Chickens | Sustainable Poultry Farming</p>
+            </footer>
+        </div>
     </div>
 </body>
 </html>
